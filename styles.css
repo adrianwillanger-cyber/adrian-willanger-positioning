@@ -91,18 +91,19 @@ strong { font-weight: 600; }
 .hero__title {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(48px, 8.4vw, 116px);
-  line-height: 0.96;
+  font-size: clamp(44px, 7.6vw, 104px);
+  line-height: 1.02;
   letter-spacing: -0.025em;
   margin: 0;
   color: var(--ink);
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.28em;
+  max-width: 14ch;
 }
-.hero__title span { display: inline-block; }
 .hero__times {
-  font-style: italic; color: var(--accent);
-  font-size: 0.85em;
-  transform: translateY(-0.04em);
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.82em;
+  padding: 0 0.05em;
+  white-space: nowrap;
 }
 
 .hero__sub {
