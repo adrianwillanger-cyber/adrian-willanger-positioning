@@ -278,6 +278,42 @@ strong { font-weight: 600; }
 }
 .pillars em, .stack em { color: var(--ink-soft); font-style: italic; }
 
+/* ---- Rail expander ---- */
+.rail__more {
+  margin-top: 18px;
+  border-top: 1px dashed var(--rule-soft);
+  padding-top: 10px;
+}
+.rail__more > summary {
+  cursor: pointer;
+  font-family: var(--mono, ui-monospace, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  padding: 8px 0;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+.rail__more > summary::-webkit-details-marker { display: none; }
+.rail__more > summary::after {
+  content: "+";
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+  transition: transform 0.15s ease;
+}
+.rail__more[open] > summary::after { content: "–"; }
+.rail__more > summary:hover { color: var(--accent-2, var(--accent)); }
+.pillars--more, .stack--more {
+  counter-reset: item 7;
+  margin-top: 4px;
+}
+.stack--more { counter-reset: item 7; }
+
 /* ============ BROKER'S READ ============ */
 .read {
   background: var(--ink);
