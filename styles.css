@@ -492,3 +492,257 @@ strong { font-weight: 600; }
   outline-offset: 3px;
   border-radius: 2px;
 }
+
+/* ============ NW PULSE — engine strip ============ */
+.pulse {
+  background: var(--paper-2);
+  padding: 96px 0;
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.pulse__inner { display: flex; flex-direction: column; gap: 56px; }
+
+.pulse__head { max-width: 760px; }
+.pulse__title {
+  font-family: var(--serif);
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  margin: 10px 0 18px;
+  color: var(--ink);
+}
+.pulse__lede {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 64ch;
+}
+
+/* diagram */
+.pulse__diagram {
+  display: grid;
+  grid-template-columns: 1fr auto 1.2fr auto 1fr;
+  align-items: stretch;
+  gap: 18px;
+}
+.diag-col {
+  background: var(--paper);
+  border: 1px solid var(--rule-soft);
+  border-radius: 4px;
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.diag-col--core {
+  border-color: var(--accent);
+  background: #fffdf9;
+  position: relative;
+}
+.diag-col--core::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-left: 3px solid var(--accent);
+  border-radius: 4px 0 0 4px;
+  pointer-events: none;
+}
+.diag-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0;
+}
+.diag-col--src .diag-label,
+.diag-col--out .diag-label { color: var(--ink-soft); }
+.diag-chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.diag-chips li {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--accent-ti);
+  padding: 5px 10px;
+  border-radius: 2px;
+  letter-spacing: 0.02em;
+}
+.diag-foot {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: auto 0 0;
+}
+.diag-core {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.diag-core-line {
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.45;
+  padding-left: 14px;
+  position: relative;
+}
+.diag-core-line::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  color: var(--accent);
+  font-weight: 700;
+}
+.diag-core-line code {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12.5px;
+  background: var(--accent-ti);
+  color: var(--accent-2);
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+.diag-out {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.diag-out li {
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.4;
+  padding-left: 14px;
+  position: relative;
+}
+.diag-out li::before {
+  content: "·";
+  position: absolute;
+  left: 4px;
+  top: -2px;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 18px;
+}
+.diag-arrow {
+  align-self: center;
+  font-size: 22px;
+  color: var(--accent);
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* proof list */
+.pulse__proof {
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.pulse__proof-kicker {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0;
+}
+.pulse__proof-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.pulse__proof-list a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  background: var(--paper);
+  border: 1px solid var(--rule-soft);
+  border-radius: 3px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color .2s ease, transform .2s ease;
+}
+.pulse__proof-list a:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.p-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.p-name {
+  font-size: 14.5px;
+  line-height: 1.35;
+  flex: 1;
+}
+.p-arrow {
+  color: var(--ink-soft);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.pulse__proof-note {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: 4px 0 0;
+}
+
+/* hero rail item + badge (for the NW Pulse entry in the proptech rail) */
+.stack__hero {
+  border-left: 3px solid var(--accent) !important;
+  padding-left: 18px !important;
+  background: linear-gradient(90deg, var(--accent-ti) 0%, transparent 40%);
+}
+.stack__badge {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--accent);
+  padding: 3px 8px;
+  border-radius: 2px;
+  font-weight: 700;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .pulse { padding: 64px 0; }
+  .pulse__diagram {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .diag-arrow {
+    transform: rotate(90deg);
+    align-self: center;
+    padding: 4px 0;
+  }
+  .pulse__proof-list {
+    grid-template-columns: 1fr;
+  }
+}

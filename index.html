@@ -34,6 +34,7 @@
       <a href="#thesis">Thesis</a>
       <a href="#expert">Domain Expert</a>
       <a href="#engine">Proptech Engine</a>
+      <a href="#nw-pulse">NW Pulse</a>
       <a href="#read">Broker’s Read</a>
       <a href="#contact" class="nav__cta">Contact</a>
     </nav>
@@ -135,9 +136,9 @@
           <p>98115 · 98125 · 98155 · 83864 — live, interactive, neighborhood-aware.</p>
           <p class="tag">Wedgwood · Ravenna · Lake City · Lake Forest Park · Sandpoint</p>
         </li>
-        <li>
-          <h3>NW Pulse</h3>
-          <p>Cross-market monitor with API-key auth and an NWMLS-compliant aggregate-only social export.</p>
+        <li class="stack__hero">
+          <h3>NW Pulse <span class="stack__badge">the engine</span></h3>
+          <p>Cross-market monitor with <code>X-Api-Key</code> auth and an NWMLS-compliant aggregate-only social export. <a href="#nw-pulse">See architecture →</a></p>
         </li>
         <li>
           <h3>Daily Hot Sheet (NWMLS)</h3>
@@ -174,6 +175,80 @@
       </ol>
     </section>
 
+  </div>
+</section>
+
+<!-- ============ NW PULSE — the engine strip ============ -->
+<section class="pulse" id="nw-pulse" aria-labelledby="nw-pulse-h">
+  <div class="container pulse__inner">
+    <header class="pulse__head">
+      <p class="kicker kicker--accent">The engine behind the dashboards</p>
+      <h2 class="pulse__title" id="nw-pulse-h">NW Pulse.</h2>
+      <p class="pulse__lede">
+        A single hyperlocal data service that ingests four NWMLS-fed markets and
+        powers every dashboard, brief, and social export on this page. Built and
+        operated by the broker who reads the numbers — not bought off the shelf.
+      </p>
+    </header>
+
+    <div class="pulse__diagram" role="img" aria-label="NW Pulse architecture: four NWMLS markets feed batch ingest, behind an X-Api-Key gateway, powering dashboards and social exports.">
+      <div class="diag-col diag-col--src">
+        <p class="diag-label">NWMLS feeds · 4 markets</p>
+        <ul class="diag-chips">
+          <li>98115</li><li>98125</li><li>98155</li><li>83864</li>
+        </ul>
+        <p class="diag-foot">new · sold · price-changed · pending</p>
+      </div>
+      <div class="diag-arrow" aria-hidden="true">→</div>
+      <div class="diag-col diag-col--core">
+        <p class="diag-label">NW Pulse</p>
+        <div class="diag-core">
+          <span class="diag-core-line">Daily batch ingest</span>
+          <span class="diag-core-line">Neighborhood-aware data model</span>
+          <span class="diag-core-line"><code>X-Api-Key</code> on <code>/api/*</code></span>
+          <span class="diag-core-line"><code>/api/health</code> · <code>/api/social-export</code></span>
+        </div>
+      </div>
+      <div class="diag-arrow" aria-hidden="true">→</div>
+      <div class="diag-col diag-col--out">
+        <p class="diag-label">What it powers</p>
+        <ul class="diag-out">
+          <li>Hyperlocal ZIP dashboards</li>
+          <li>Daily Hot Sheet (NWMLS)</li>
+          <li>98125 Home Value tool</li>
+          <li>n8n cross-posting stack</li>
+          <li>NWMLS-compliant social export</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pulse__proof">
+      <p class="pulse__proof-kicker">Live, running today</p>
+      <ul class="pulse__proof-list">
+        <li>
+          <a href="https://www.perplexity.ai/computer/a/ne-seattle-dashboards-lean-8sNWnofpQTiLJm2j.czFrA" target="_blank" rel="noopener">
+            <span class="p-tag">Daily</span>
+            <span class="p-name">Featured ZIPs — 98115 · 98125 · 98155</span>
+            <span class="p-arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.perplexity.ai/computer/a/ne-seattle-dashboards-lean-8sNWnofpQTiLJm2j.czFrA" target="_blank" rel="noopener">
+            <span class="p-tag">Seasonal</span>
+            <span class="p-name">98125 Market Pulse</span>
+            <span class="p-arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://adrianwillanger-cyber.github.io/HomeBuyerTrends98125/" target="_blank" rel="noopener">
+            <span class="p-tag">Public</span>
+            <span class="p-name">HomeBuyerTrends98125 · GitHub Pages</span>
+            <span class="p-arrow">↗</span>
+          </a>
+        </li>
+      </ul>
+      <p class="pulse__proof-note">Same engine, four markets, daily refresh — NWMLS-clean aggregate posture by default.</p>
+    </div>
   </div>
 </section>
 
